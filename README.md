@@ -77,4 +77,4 @@ This will run the app in production mode.
 
 ## License
 
-This project is provided for personal viewing and learning purposes only. The code may not be reproduced, modified, or used for any commercial purposes. Unauthorized commercial use, including but not limited to resale or redistribution for profit, is strictly prohibited.
+This project is provided for personal viewing and learning purposes only. The code may not be reproduced, modified, or used for any commercial purposes. Unauthorized commercial use, including but not limited to resale or redistribution for profit, is strictly prohibited. Only collaborators and the owner of this project have the exclusive right to make any form of profit from it.
