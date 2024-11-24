@@ -77,7 +77,7 @@ This will run the app in production mode.
 ## Credits
 
 Frontend Development: [Skell](https://github.com/skellgreco)
-Backend Development: [Kotsasmin](https://github.com/Kotsasmin)
+Backend Development: [Kotsasmin](https://kotsasmin.dev)
 
 ## License
 
