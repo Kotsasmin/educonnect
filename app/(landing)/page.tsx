@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
@@ -15,42 +15,43 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export default function LandingPage() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const openDialog = () => {
-    setIsDialogOpen(true);
-  };
-
-  const closeDialog = () => {
-    setIsDialogOpen(false);
-  };
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gradient-to-r">
-      <header className="container mx-auto py-4 bg-slate-200 dark:bg-black">
+      <header className="container mx-auto py-4  ">
         <nav className="flex justify-between items-center">
           <h1 className="text-lg font-bold ml-5 cursor-default dark:hover:text-gray-300 hover:text-gray-700 transition-all sm:text-2xl">
             EduConnect
           </h1>
 
           <div>
-            <Button variant="ghost" onClick={openDialog} className="hidden sm:inline-block mr-4">
+            <Button
+              variant="ghost"
+              onClick={() => router.push("/login")}
+              className="hidden sm:inline-block mr-4"
+            >
               Login
             </Button>
             <Button className="mr-4 hidden sm:inline-block">Sign Up</Button>
-            <div className='hidden sm:inline-block'><ModeToggle /></div>
-            <div className='inline-block sm:hidden'>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="mr-3">☰</DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>Options</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Login</DropdownMenuItem>
-                <DropdownMenuItem>Sign Up</DropdownMenuItem>
-    
-                <DropdownMenuItem className="mx-8"><ModeToggle /></DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="hidden sm:inline-block">
+              <ModeToggle />
+            </div>
+            <div className="inline-block sm:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="mr-3">☰</DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>Options</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => router.push("/login")}>
+                    Login
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>Sign Up</DropdownMenuItem>
+                  <DropdownMenuItem className="mx-8">
+                    <ModeToggle />
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </nav>
@@ -59,7 +60,7 @@ export default function LandingPage() {
       <main className="container mx-auto px-4">
         <section className="text-center py-20">
           <h2 className="text-2xl font-bold mb-5">
-            <div className=" bg-gradient-to-r to-danger bg-clip-text text-transparent from-blue-600 via-blue-500 to-blue-600 font-semibold">
+            <div className="bg-gradient-to-r to-danger bg-clip-text text-transparent from-blue-600 via-blue-500 to-blue-600 font-semibold">
               Seamless Communication
             </div>{" "}
             for Schools, Teachers, and Students
@@ -71,12 +72,6 @@ export default function LandingPage() {
             effortlessly.
           </p>
 
-          {/* Το βρίσκω λίγο αχρείαστο και too much αυτό το text. Αν θες κάνε το revert */}
-
-          {/* <p className="text-xs max-w-2xl mx-auto mb-10 mt-5">
-            Stay connected, share resources, and streamline your educational processes with EduConnect. 
-            <br></br><br></br>Designed to bridge the gap between teachers, students, and schools effortlessly.
-          </p> */}
           <Button className="px-8 py-4 text-sm hover:bg-blue-500 hover:text-white hover:px-9 transition-all">
             Get Started
           </Button>
@@ -137,9 +132,6 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-
-      {/* Render the login dialog and pass the state */}
-      <DialogLog isOpen={isDialogOpen} onClose={closeDialog} />
     </div>
   );
 }
