@@ -13,14 +13,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Hexagon } from 'lucide-react';
 
 export default function LandingPage() {
   const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gradient-to-r">
-      <header className="container mx-auto py-4  ">
-        <nav className="flex justify-between items-center">
+      <header className="container mx-auto py-4 ">
+        <nav className="flex justify-between items-center bg-opacity-20">
           <h1 className="text-lg font-bold ml-5 cursor-default transition-all sm:text-2xl">
             EduConnect
           </h1>
@@ -57,31 +58,33 @@ export default function LandingPage() {
         </nav>
       </header>
 
-      <main className="container mx-auto px-4">
+      <main className="container mx-auto px-0">
+        <div className="dark:bg-gradient-to-b from-blue-500/10 to-transparent">
         <section className="text-center py-20">
-          <h2 className="text-2xl font-bold mb-5">
-            <div className="bg-gradient-to-r to-danger bg-clip-text text-transparent  font-semibold">
-              Seamless Communication
-            </div>{" "}
-            for Schools, Teachers, and Students
+          <h2 className="text-5xl sm:text-6xl mb-5 bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text font-extrabold text-transparent text-center shadow-emerald-800">
+            EduConnect
+
           </h2>
+          
           <hr className="mx-10"></hr>
 
-          <p className="text-xs max-w-2xl mx-10 mb-5 mt-5">
-            Designed to bridge the gap between teachers, students, and schools
+          <p className="text-xs mx-10 mb-5 mt-5 text-center">
+            Bridge the gap between teachers, students, and schools
             effortlessly.
           </p>
 
-          <Button className="px-8 py-4 text-sm   hover:px-9 transition-all">
-            Get Started
+          <Button variant='secondary' className="px-8 py-4 text-sm hover:px-9 transition-all">
+          <Hexagon /> 
+             Get Started
           </Button>
         </section>
-
-        <section className="py-20">
+        </div>
+        <section className="py-20 mx-5">
           <h1 className="text-center text-xl mb-5 font-semibold  transition-all cursor-default">
-            Features
+            Features (Undone apo edw kai katw)
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
             <Card className="border-black border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">🔗 Messaging</h3>
@@ -93,7 +96,8 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
-
+            </div>
+            <div className="p-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
             <Card className="border-black border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📁 File Sharing</h3>
@@ -105,7 +109,8 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
-
+            </div>
+            <div className="p-0.5 rounded-lg bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-800">
             <Card className="border-black border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📅 Scheduling</h3>
@@ -117,6 +122,7 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
+            </div>
           </div>
         </section>
 
