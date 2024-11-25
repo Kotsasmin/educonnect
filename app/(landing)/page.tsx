@@ -21,7 +21,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-r">
       <header className="container mx-auto py-4  ">
         <nav className="flex justify-between items-center">
-          <h1 className="text-lg font-bold ml-5 cursor-default dark:hover:text-gray-300 hover:text-gray-700 transition-all sm:text-2xl">
+          <h1 className="text-lg font-bold ml-5 cursor-default transition-all sm:text-2xl">
             EduConnect
           </h1>
 
@@ -60,7 +60,7 @@ export default function LandingPage() {
       <main className="container mx-auto px-4">
         <section className="text-center py-20">
           <h2 className="text-2xl font-bold mb-5">
-            <div className="bg-gradient-to-r to-danger bg-clip-text text-transparent from-blue-600 via-blue-500 to-blue-600 font-semibold">
+            <div className="bg-gradient-to-r to-danger bg-clip-text text-transparent  font-semibold">
               Seamless Communication
             </div>{" "}
             for Schools, Teachers, and Students
@@ -72,13 +72,13 @@ export default function LandingPage() {
             effortlessly.
           </p>
 
-          <Button className="px-8 py-4 text-sm hover:bg-blue-500 hover:text-white hover:px-9 transition-all">
+          <Button className="px-8 py-4 text-sm   hover:px-9 transition-all">
             Get Started
           </Button>
         </section>
 
         <section className="py-20">
-          <h1 className="text-center text-xl mb-5 font-semibold hover:text-blue-500 transition-all cursor-default">
+          <h1 className="text-center text-xl mb-5 font-semibold  transition-all cursor-default">
             Features
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -126,7 +126,7 @@ export default function LandingPage() {
             Start using EduConnect to connect with your school community.
           </p>
           <div className="flex justify-center justify-items-center space-x-4">
-            <Button className="px-8 py-4 text-sm hover:bg-blue-500 hover:text-white hover:px-9 transition-all">
+            <Button className="px-8 py-4 text-sm  hover:px-9 transition-all">
               Get Started
             </Button>
           </div>
