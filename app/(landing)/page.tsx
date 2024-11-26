@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { ModeToggle } from "@/components/theme-changer";
 import { DialogLog } from "./_components/dialog";
+import Autoplay from "embla-carousel-autoplay"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +14,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { Hexagon } from 'lucide-react';
 
 export default function LandingPage() {
@@ -83,8 +91,13 @@ export default function LandingPage() {
           <h1 className="text-center text-xl mb-5 font-semibold  transition-all cursor-default">
             Features (Undone apo edw kai katw)
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
+          <Carousel className="mx-20" plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}>
+          <CarouselContent>
+            <CarouselItem>
             <Card className="border-black border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">🔗 Messaging</h3>
@@ -96,9 +109,21 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
-            </div>
-            <div className="p-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
+            </CarouselItem>
+            <CarouselItem>
             <Card className="border-black border-2 dark:border-neutral-800">
+              <CardHeader className="text-center">
+                <h3 className="text-lg font-semibold">🔗 Messaging</h3>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-sm">
+                  Teachers and students can communicate in real time, ensuring
+                  seamless interaction.
+                </p>
+              </CardContent>
+            </Card>
+            </CarouselItem>
+            <CarouselItem><Card className="border-black border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📁 File Sharing</h3>
               </CardHeader>
@@ -108,9 +133,8 @@ export default function LandingPage() {
                   announcements.
                 </p>
               </CardContent>
-            </Card>
-            </div>
-            <div className="p-0.5 rounded-lg bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-800">
+            </Card></CarouselItem>
+            <CarouselItem>
             <Card className="border-black border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📅 Scheduling</h3>
@@ -122,8 +146,25 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+
+          {/* Do not Delete
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
+            
             </div>
-          </div>
+            <div className="p-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
+            
+            </div>
+            <div className="p-0.5 rounded-lg bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-800">
+            
+            </div>
+          </div> */}
         </section>
 
         <section className="py-20 text-center">
