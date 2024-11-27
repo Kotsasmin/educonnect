@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
+import { User, SquareAsterisk, LogIn } from 'lucide-react';
 
 const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -35,7 +36,7 @@ export default function LoginPage() {
       }
     } catch (err) {
       console.error(err);
-      setError("Invalid username or password. Please try again.");
+      setError("Wrong Credentials! Please try again.");
     } finally {
       setLoading(false);
     }
@@ -44,10 +45,13 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <div className="w-full max-w-md p-8  shadow-md rounded-md">
-        <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
+      <h2 className="pb-5 text-3xl sm:text-5xl mb-5 bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text font-extrabold text-transparent text-center shadow-emerald-800">
+            Login
+
+          </h2>
 
         <div className="mb-4">
-          <Label htmlFor="identity">Email or Username</Label>
+          <Label htmlFor="identity" className='flex'><User className="pb-2"/> Email or Username</Label>
           <Input
             id="identity"
             type="text"
@@ -58,7 +62,7 @@ export default function LoginPage() {
         </div>
 
         <div className="mb-4">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password" className='flex'><SquareAsterisk  className='pb-2' />Password</Label>
           <Input
             id="password"
             type="password"
@@ -68,24 +72,25 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="flex items-center mb-6">
+        <div className="flex items-center mb-8">
           <Checkbox
             id="isTeacher"
             checked={isTeacher}
             onCheckedChange={(checked) => setIsTeacher(checked)}
           />
-          <Label htmlFor="isTeacher" className="ml-2">
-            Login as Teacher
+          <Label htmlFor="isTeacher" className="ml-2 text-xs font-semibold">
+            Teacher Account
           </Label>
         </div>
 
-        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+        {error && <p className="text-red-500 text-xs mb-4 text-center">{error}</p>}
 
         <Button
           onClick={handleLogin}
           disabled={loading}
           className="w-full"
         >
+          <div className=""><LogIn className=""/> </div>
           {loading ? "Logging in..." : "Login"}
         </Button>
       </div>

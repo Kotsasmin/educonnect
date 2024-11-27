@@ -61,7 +61,10 @@ body {
   }
 }
 
-
+.hover-rotation:hover .hover-rotation-symbol {
+  transform: rotate(360deg); /* Rotate the symbol */
+  
+}
 
 
 @layer base {

@@ -81,24 +81,26 @@ export default function LandingPage() {
             effortlessly.
           </p>
 
-          <Button variant='secondary' className="px-8 py-4 text-sm hover:px-9 transition-all">
-          <Hexagon /> 
+          <Button variant='secondary' className="hover-rotation px-8 py-4 text-sm hover:px-9 transition-all">
+          <div className="hover-rotation-symbol transition-all"><Hexagon className=""/> </div>
              Get Started
           </Button>
         </section>
         </div>
         <section className="py-20 mx-5">
-          <h1 className="text-center text-xl mb-5 font-semibold  transition-all cursor-default">
-            Features (Undone apo edw kai katw)
+          <h1 className="text-center text-3xl mb-5 font-semibold  transition-all cursor-default">
+            Features
           </h1>
           <Carousel className="mx-20" plugins={[
         Autoplay({
           delay: 2000,
+          
         }),
       ]}>
           <CarouselContent>
             <CarouselItem>
-            <Card className="border-black border-2 dark:border-neutral-800">
+            <div className="p-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
+            <Card className="border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">🔗 Messaging</h3>
               </CardHeader>
@@ -109,21 +111,12 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
+            </div>
             </CarouselItem>
+            
             <CarouselItem>
-            <Card className="border-black border-2 dark:border-neutral-800">
-              <CardHeader className="text-center">
-                <h3 className="text-lg font-semibold">🔗 Messaging</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-sm">
-                  Teachers and students can communicate in real time, ensuring
-                  seamless interaction.
-                </p>
-              </CardContent>
-            </Card>
-            </CarouselItem>
-            <CarouselItem><Card className="border-black border-2 dark:border-neutral-800">
+            <div className="p-0.5 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-lg">
+              <Card className="border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📁 File Sharing</h3>
               </CardHeader>
@@ -133,9 +126,12 @@ export default function LandingPage() {
                   announcements.
                 </p>
               </CardContent>
-            </Card></CarouselItem>
+            </Card>
+            </div>
+            </CarouselItem>
             <CarouselItem>
-            <Card className="border-black border-2 dark:border-neutral-800">
+            <div className="p-0.5 bg-gradient-to-r from-red-500 via-red-400 to-red-500 rounded-lg">
+            <Card className="border-2 dark:border-neutral-800">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📅 Scheduling</h3>
               </CardHeader>
@@ -146,6 +142,7 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
+            </div>
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
@@ -168,14 +165,18 @@ export default function LandingPage() {
         </section>
 
         <section className="py-20 text-center">
-          <h3 className="text-3xl font-semibold mb-6">Join EduConnect Today</h3>
+        <h2 className="text-4xl sm:text-6xl mb-5 bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text font-extrabold text-transparent text-center shadow-emerald-800">
+            Join Now
+
+          </h2>
           <p className="text-sm mb-10">
             Start using EduConnect to connect with your school community.
           </p>
           <div className="flex justify-center justify-items-center space-x-4">
-            <Button className="px-8 py-4 text-sm  hover:px-9 transition-all">
-              Get Started
-            </Button>
+          <Button variant='secondary' className="hover-rotation px-8 py-4 text-sm hover:px-9 transition-all">
+          <div className="hover-rotation-symbol transition-all"><Hexagon className=""/> </div>
+             Get Started
+          </Button>
           </div>
         </section>
       </main>
