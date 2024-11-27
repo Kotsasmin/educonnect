@@ -149,19 +149,7 @@ export default function LandingPage() {
           <CarouselNext />
         </Carousel>
 
-          {/* Do not Delete
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
-            
-            </div>
-            <div className="p-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
-            
-            </div>
-            <div className="p-0.5 rounded-lg bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-800">
-            
-            </div>
-          </div> */}
+
         </section>
 
         <section className="py-20 text-center">
