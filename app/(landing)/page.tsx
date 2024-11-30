@@ -43,13 +43,13 @@ export default function LandingPage() {
               Login
             </Button>
             <Button className="mr-4 hidden sm:inline-block">Sign Up</Button>
-            <div className="hidden sm:inline-block">
-              <ModeToggle />
+            <div className="hidden sm:inline-block mr-4 align-middle">
+              <ModeToggle  />
             </div>
             <div className="inline-block sm:hidden">
               <DropdownMenu>
-                <DropdownMenuTrigger className="mr-3">☰</DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuTrigger className="mr-5">☰</DropdownMenuTrigger>
+                <DropdownMenuContent className='bg-white/5 backdrop-blur-md rounded-lg border border-white/0 mr-5'>
                   <DropdownMenuLabel>Options</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => router.push("/login")}>
@@ -91,16 +91,16 @@ export default function LandingPage() {
           <h1 className="text-center text-3xl mb-5 font-semibold  transition-all cursor-default">
             Features
           </h1>
-          <Carousel className="mx-20" plugins={[
+          <Carousel className="mx-10" plugins={[
         Autoplay({
-          delay: 2000,
+          delay: 3000,
           
         }),
       ]}>
           <CarouselContent>
             <CarouselItem>
             <div className="p-0.5 bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 rounded-lg">
-            <Card className="border-2 dark:border-neutral-800">
+            <Card className="border-2 dark:border-neutral-800 sm:pb-10 sm:pt-5" >
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">🔗 Messaging</h3>
               </CardHeader>
