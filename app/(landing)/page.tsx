@@ -116,7 +116,7 @@ export default function LandingPage() {
             
             <CarouselItem>
             <div className="p-0.5 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 rounded-lg">
-              <Card className="border-2 dark:border-neutral-800">
+              <Card className="border-2 dark:border-neutral-800 sm:pb-10 sm:pt-5">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📁 File Sharing</h3>
               </CardHeader>
@@ -131,7 +131,7 @@ export default function LandingPage() {
             </CarouselItem>
             <CarouselItem>
             <div className="p-0.5 bg-gradient-to-r from-red-500 via-red-400 to-red-500 rounded-lg">
-            <Card className="border-2 dark:border-neutral-800">
+            <Card className="border-2 dark:border-neutral-800 sm:pb-10 sm:pt-5">
               <CardHeader className="text-center">
                 <h3 className="text-lg font-semibold">📅 Scheduling</h3>
               </CardHeader>
