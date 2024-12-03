@@ -31,6 +31,7 @@ import {
   Calendar1,
   ChartLine,
   ChartNoAxesGantt,
+  LogOut,
 } from "lucide-react";
 import { Inbox, Search } from "lucide-react";
 import {
@@ -55,6 +56,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import { ModeToggle } from "@/components/theme-changer";
 
 const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -156,12 +158,26 @@ export default function DashboardPage() {
         <div className="flex flex-1">
           {/* Side bar */}
           <SidebarTrigger />
-          <Sidebar side="left" variant="sidebar" collapsible="offcanvas">
+          <Sidebar side="left" variant="sidebar" collapsible="icon">
+            <SidebarHeader className='group-data-[collapsible=icon]:hidden'>
+            <Avatar className="w-12 h-12 mb-3 mt-5 mx-auto">
+              <AvatarImage
+                src={user?.avatarUrl || "https://static.vecteezy.com/system/resources/thumbnails/002/165/413/small_2x/line-icon-for-student-vector.jpg"}
+                alt="User Avatar"
+              />
+              <AvatarFallback>
+                {user?.email?.[0]?.toUpperCase() || "U"}
+              </AvatarFallback>
+            </Avatar>
+            <h2 className="text-center font-bold text-lg">Welcome, {user?.name || "Username"}</h2>
+            </SidebarHeader>
             <SidebarContent className="ml-1">
             <ScrollArea>
             <SidebarGroup />
             <SidebarGroupLabel>EduConnect</SidebarGroupLabel>
             <a href='/dashboard'><SidebarMenuButton><ChartNoAxesGantt />Overview</SidebarMenuButton></a>
+            <SidebarMenuButton><MessagesSquareIcon />Messages</SidebarMenuButton>
+
               <SidebarGroup />
               <SidebarGroupLabel>School</SidebarGroupLabel>
               <DropdownMenu>
@@ -195,67 +211,24 @@ export default function DashboardPage() {
               <SidebarGroup />
               <SidebarGroup />
             <SidebarGroupLabel>Account</SidebarGroupLabel>
-            <SidebarMenuButton><MessagesSquareIcon />Messages</SidebarMenuButton>
             <a href='/dashboard'><SidebarMenuButton><Settings />Settings</SidebarMenuButton></a>
+            <SidebarMenuButton><LogOut color="#ff0000" />Sign Out</SidebarMenuButton>
               <SidebarGroup />
               </ScrollArea>
             </SidebarContent>
             <SidebarFooter>
+              <div className='inline-block'>
               <SidebarTrigger />
+
+                </div>
             </SidebarFooter>
           </Sidebar>
 
-          {/* OLD SIDEBAR DO NOT DELETE FOR REFERENCE
-        
-        <aside className="w-64 border-r">
-          <div className="p-4 border-b">
-            <Avatar className="w-12 h-12 mb-3 mx-auto">
-              <AvatarImage
-                src={user?.avatarUrl || "https://static.vecteezy.com/system/resources/thumbnails/002/165/413/small_2x/line-icon-for-student-vector.jpg"}
-                alt="User Avatar"
-              />
-              <AvatarFallback>
-                {user?.email?.[0]?.toUpperCase() || "U"}
-              </AvatarFallback>
-            </Avatar>
-            <h2 className="text-center font-bold text-lg">{user?.email || "User"}</h2>
-          </div>
-          <nav className="p-4 space-y-4">
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <Book className="w-5 h-5" />
-              <span>My Courses</span>
-            </Button>
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <Mail className="w-5 h-5" />
-              <span>My Messages</span>
-            </Button>
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <Bell className="w-5 h-5" />
-              <span>My Announcements</span>
-            </Button>
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <Clipboard className="w-5 h-5" />
-              <span>My Calendar</span>
-            </Button>
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <FileText className="w-5 h-5" />
-              <span>My Notes</span>
-            </Button>
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <CheckCircle className="w-5 h-5" />
-              <span>My Grades</span>
-            </Button>
-            <Button variant="ghost" className="w-full text-left flex items-center space-x-2">
-              <Award className="w-5 h-5" />
-              <span>My Certificate</span>
-            </Button>
-          </nav>
-        </aside> */}
-
+          
           <main className="flex-1 p-8">
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {/* Courses List . This shall be updated after we are done building the backend*/}
-              <Card className="col-span-2">
+              <Card className="col-span-1 sm:col-span-2">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Book className="w-5 h-5" />
@@ -293,7 +266,7 @@ export default function DashboardPage() {
                   </CardTitle>
                   <CardDescription>Events and deadlines</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="align-middle">
                   <Calendar />
                 </CardContent>
               </Card>
@@ -305,7 +278,7 @@ export default function DashboardPage() {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Bell className="w-5 h-5" />
-                  <span>Recent Announcements</span>
+                  <span>Announcements</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
